@@ -10,17 +10,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpleadoComponent implements OnInit {
   nombre="Juan";
-  apellido="Dias";
-  edad= 28;
-  empresa="Pildoras informaticas";
 
-  //empresa="Pildoras Informaticas";
+  apellido="Dias";
+
+  edad= 28;
+
+  empresa="Pildoras Informaticas";
+  
   /*getEdad(){
+
     return this.edad;
   }*/
-  LlamaEmpresa(value:String){
-    
-  }
+ 
+    habilitacionCuadro=false;
+    usuRegistrado=false;
+
+    textoDeRegistro="no hay nadie registrado"
+
+    getRegistroUsuario(){
+      this.usuRegistrado=false;
+
+
+    }
+    setusuarioRegistrado(event:Event){
+    //alert ("El usuario se acaba de registrar");
+   // this.textoDeRegistro="El usuario se acaba de registrar";
+   if((<HTMLInputElement>event.target).value=="si"){
+    this.textoDeRegistro ="El usuario se acaba de registrar";
+   }else{
+    this.textoDeRegistro="No hay nadie registrado";
+
+   }
+
+   }  
 
   constructor() { }
 
